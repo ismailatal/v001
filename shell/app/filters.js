@@ -7,39 +7,25 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
    */
   const filters = {};
 
-  /* ------------------------------------------------------------------
-    add your methods to the filters obj below this comment block:
-    @example:
+  // import moment from 'moment';
 
-    filters.sayHi = function(name) {
-        return 'Hi ' + name + '!'
-    }
+  // filters.momento = string => {
+  //   return moment(string, 'DD/MM/YYYY', true).format())
+  // }
 
-    Which in your templates would be used as:
+  var dateFilter = require('nunjucks-date-filter');
+  filters.dateFull = string => {
+    return dateFilter(string, 'dddd, Do MMMM YYYY')
+  }
 
-    {{ 'Paul' | sayHi }} => 'Hi Paul'
+//
+//
+// var dateFilter = require('nunjucks-date-filter');
+//
+// filters.date = string => {
+//   return string.dateFilter.setDefaultFormat('YYYY');
+// }
 
-    Notice the first argument of your filters method is whatever
-    gets 'piped' via '|' to the filter.
 
-    Filters can take additional arguments, for example:
-
-    filters.sayHi = function(name,tone) {
-      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
-    }
-
-    Which would be used like this:
-
-    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
-    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
-
-    For more on filters and how to write them see the Nunjucks
-    documentation.
-
-  ------------------------------------------------------------------ */
-
-  /* ------------------------------------------------------------------
-    keep the following line to return your filters to the app
-  ------------------------------------------------------------------ */
   return filters;
 };

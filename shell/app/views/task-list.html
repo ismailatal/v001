@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+
+{% block header %}
+{% include 'foundations/header-signed-in.html' %}
+{% endblock %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "javascript:window.history.back()",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+          {
+            title: {
+              text: "Company Directors"
+            },
+            href: "#",
+            status: {
+              text: "Completed"
+            }
+          },
+          {
+            title: {
+              text: "Registered company details"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Financial history"
+            },
+            hint: {
+              text: "Include 5 years of the company’s relevant financial information."
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Business plan"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "References"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+<div>
+  <label class="govuk-label govuk-label--s" style="" for="fromDate">Schedule from:</label>
+  <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate']}}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate">
+  <div class="govuk-form-group">
+</div>
+
+</div>
+</div>
+<div class="govuk-grid-column-one-half" style=";">
+
+<div>
+<label class="govuk-label govuk-label--s" style="" for="toDate">To:</label>
+  <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['toDate']}}" type="date" placeholder="dd-mm-yyyy" id="toDate" name="toDate">
+  <div class="govuk-form-group">
+</div>
+</div>
+</div>
+</div>
