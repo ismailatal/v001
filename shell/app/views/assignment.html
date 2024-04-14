@@ -1,0 +1,76 @@
+{% set pagetitle ="My campaign tasks - Select and Invite" %}
+
+{% extends 'layout.html' %}
+{% block header %}
+{% include 'foundations/header-signed-in.html' %}
+{% endblock %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  {{ pagetitle }}
+{% endblock %}
+
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "javascript:window.history.back()",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+      <table role="table" class="nhsuk-table-responsive">
+        <caption class="nhsuk-table__caption nhsuk-u-font-size-48">My campaign tasks</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Campaign
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Last update
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Status
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Age </span><a href="task-list">{{ data['name']|default("Covid-19 Spring 2024 Booster")}}</a>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Last update? </span> {{ data['fromDate']|when|default("Wed 09 April 16:36pm") }}
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Status? </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey tagPos">
+              Approval granted
+              </strong>
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Action? </span>Action lorem
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -3,12 +3,29 @@
   "service": {
     "name": "Vaccine Select and Invite Manager"
   },
-  "showNav": "false",
+  "showNav": "true",
   "showSearch": "false",
   "primaryLinks": [
     {
+      'url' : 'assignment',
+      'label' : 'My campaign tasks'
+    },
+    {
+      'url' : '#',
+      'label' : ' Campaign activity'
+    },
+    {
+      'url' : '#',
+      'label' : 'Manage my team'
+    },
+
+    {
+      'url' : '#',
+      'label' : data['email-address'|default('Profile user@nhs.net')
+    },
+    {
       'url' : 'sign-in',
-      'label' : 'Sign out'
+      'label' : "Sign out"
     }
   ]
   })

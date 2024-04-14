@@ -1,19 +1,21 @@
-{% extends 'layout.html' %}
+{% set pagetitle ="Home - Select and Invite" %}
 
-{% block pageTitle %}
-    {{serviceName}}
+{% extends 'layout.html' %}
+{% block header %}
+{% include 'foundations/header-signed-in.html' %}
 {% endblock %}
 
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
 
-
+{% block pageTitle %}
+  {{ pagetitle }}
+{% endblock %}
 
 
 
   <div class="nhsuk-width-container-fluid">
 
-    {% block header %}
-    {% include 'foundations/header-signed-in.html' %}
-    {% endblock %}
+
     {% block content %}
   <main class="nhsuk-main-wrapper" id="maincontent" role="main">
       <div class="nhsuk-grid-row">
@@ -22,10 +24,7 @@
 
         <div class="nhsuk-grid-column-full">
 
-<div style="text-align:right">
-  <span class="nhsuk-caption-s"><a href="sign-in">Sign out</a></span>
-</div>
-        <h1>Welcome back {{ data['email-address'] | default('user@nhs.net') }}</h1>
+        <h1>Welcome back {{ data['email-address'] }}</h1>
 
 
         {% from 'card/macro.njk' import card %}

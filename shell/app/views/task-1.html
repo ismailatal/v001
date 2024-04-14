@@ -1,4 +1,4 @@
-{% set pagetitle ="What is the campaign name?  - Select and Invite" %}
+{% set pagetitle ="Task 1 - Select and Invite" %}
 
 {% extends 'layout.html' %}
 {% block header %}
@@ -24,33 +24,44 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      {% if data['change'] == 'name' %}
+      <!-- {% if data['change'] == 'name' %}
       {% set action = 'summary' %}
       {% else %}
       {% set action = 'dates' %}
-      {% endif %}
+      {% endif %} -->
 
 
 
-      <form action="{{ action }}" method="post">
+      <form action="task-list" method="post">
   <!-- <span class="nhsuk-caption-l nhsuk-u-padding-bottom-1">Create a new campaign</span> -->
         <h1>
-          What is the new campaign name?
+          Task 1
         </h1>
 
-        {% from 'input/macro.njk' import input %}
 
-        {{ input({
-          "label": {
-            "text": "Name"
-          },
-          "id": "name",
-          "name": "name",
-          "value": data['name']
-        }) }}
+        {% from 'radios/macro.njk' import radios %}
 
-
-
+  {{ radios({
+    "idPrefix": "task1",
+    "name": "task1",
+    "fieldset": {
+      "legend": {
+        "text": "Have you completed this task?",
+        "classes": "nhsuk-fieldset__legend--l",
+        "isPageHeading": false
+      }
+    },
+    "items": [
+      {
+        "value": "yes",
+        "text": "Yes, I’ve completed this task"
+      },
+      {
+        "value": "no",
+        "text": "No, I’ll come back to it later"
+      }
+    ]
+  }) }}
 
         {{ button({
           text: "Continue"

@@ -1,23 +1,20 @@
+{% set pagetitle ="Sign in - Select and Invite" %}
+
 {% extends 'layout.html' %}
+{% block header %}
+{% include 'foundations/header-signed-out.html' %}
+{% endblock %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-    {{serviceName}}
+  {{ pagetitle }}
 {% endblock %}
 
 <!-- {% from 'header/macro.njk' import header %} -->
 
 
-{% block header %}
-{{ header({
-  "service": {
-    "name": "Vaccine Select and Invite Manager"
-  },
-  "showNav": "false",
-  "showSearch": "false",
-  "searchAction": " "
-  })
-}}
-{% endblock %}
+
 
 {% set title = "Sign in" %}
 
@@ -45,8 +42,8 @@
             "text": "Password"
           },
           type: "password",
-          "id": "email-address",
-          "name": "email-address"
+          "id": "password",
+          "name": "password"
         }) }}
 
 
