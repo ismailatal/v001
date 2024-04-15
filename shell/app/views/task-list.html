@@ -63,6 +63,30 @@
 </style>
 
 <ul class="nhsuk-list">
+  <li class="lines">Assign people to the campaign
+    <strong class="nhsuk-tag nhsuk-tag--grey tagPos">
+    Not started
+    </strong></li>
+  <li class="lines"><a class="nhsuk-link" href="select-cohorts">Select cohorts</a>
+
+    {% if data['selectCohorts'] == 'done' %}
+    <strong  class="nhsuk-tag nhsuk-tag--green tagPos">
+    Completed
+    </strong>
+    {% else %}
+    <strong  class="nhsuk-tag nhsuk-tag--grey tagPos">
+    Not started
+    </strong>
+    {% endif %}
+
+  </li>
+  <li class="linesLast"><a class="nhsuk-link" href="name-dates?editDetails=true">Campaign name and dates</a>
+    <strong  class="nhsuk-tag nhsuk-tag--green tagPos">
+    Completed
+    </strong></li>
+</ul>
+<h2 class="nhsuk-heading-l">Section heading 2</h2>
+<ul class="nhsuk-list">
   <li class="lines"><a class="nhsuk-link" href="task-1">Carry out a task 1</a>
     {% if data['task1'] == 'yes' %}
 
@@ -116,31 +140,9 @@
   </li>
 </ul>
 
-<h2 class="nhsuk-heading-l">Section heading 2</h2>
 
-<ul class="nhsuk-list">
-  <li class="lines">Assign people to the campaign
-    <strong class="nhsuk-tag nhsuk-tag--grey tagPos">
-    Not started
-    </strong></li>
-  <li class="lines"><a class="nhsuk-link" href="select-cohorts">Select cohorts</a>
 
-    {% if data['selectCohorts'] == 'done' %}
-    <strong  class="nhsuk-tag nhsuk-tag--green tagPos">
-    Completed
-    </strong>
-    {% else %}
-    <strong  class="nhsuk-tag nhsuk-tag--grey tagPos">
-    Not started
-    </strong>
-    {% endif %}
 
-  </li>
-  <li class="linesLast"><a class="nhsuk-link" href="name-dates">Edit the campaign name and dates</a>
-    <strong class="nhsuk-tag nhsuk-tag--grey tagPos">
-    Not started
-    </strong></li>
-</ul>
 
 
 
