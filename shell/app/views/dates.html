@@ -2,7 +2,7 @@
 
 {% extends 'layout.html' %}
 {% block header %}
-{% include 'foundations/header-signed-in.html' %}
+{% include 'foundations/header-signed-in-campaign.html' %}
 {% endblock %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
@@ -24,37 +24,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-<!-- {% if data['change'] == 'dates' %}
-{% set action = 'summary' %}
-{% endif %} -->
 
-<!--
-      <form action="summary" method="post">
-
-
-
-
-        <div>
-
-          <span class="nhsuk-caption-l nhsuk-caption--top" for="fromDate">Start</span>
-          <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate']}}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate">
-
-
-        </div>
-
-        <div>
-
-          <span class="nhsuk-caption-l nhsuk-caption--top" for="toDate">End</span>
-          <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['toDate']}}" type="date" placeholder="dd-mm-yyyy" id="toDate" name="toDate">
-
-
-        </div>
-
-        {{ button({
-          text: "Continue"
-        }) }}
-      </form> -->
-  <!-- <span class="nhsuk-caption-l nhsuk-u-padding-bottom-1">Create a new campaign</span> -->
       <h1>
         What are the campaign dates?
       </h1>
@@ -74,7 +44,7 @@
 
               <span class="nhsuk-caption-l nhsuk-caption--top" for="fromDate">Start</span>
               <!-- <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate']}}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate"> -->
-              <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate']}}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate">
+              <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate'] }}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate">
 
 
 
@@ -83,7 +53,7 @@
             <div class="nhsuk-grid-column-one-half">
 
               <span class="nhsuk-caption-l nhsuk-caption--top" for="toDate">End</span>
-              <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['toDate']}}" type="date" placeholder="dd-mm-yyyy" id="toDate" name="toDate">
+              <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['toDate'] }}" type="date" placeholder="dd-mm-yyyy" id="toDate" name="toDate">
 
 
 

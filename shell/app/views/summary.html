@@ -2,7 +2,7 @@
 
 {% extends 'layout.html' %}
 {% block header %}
-{% include 'foundations/header-signed-in.html' %}
+{% include 'foundations/header-signed-in-campaign.html' %}
 {% endblock %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
@@ -25,7 +25,6 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-  <!-- <span class="nhsuk-caption-l nhsuk-u-padding-bottom-1">Create a new campaign</span> -->
         <h1>
           Summary
         </h1>
@@ -51,7 +50,7 @@
               Dates
             </dt>
             <dd class="nhsuk-summary-list__value">
-              {{ data['fromDate']|dateFull }} - {{ data['toDate'] |dateFull }}
+              {{ data['fromDate']|dateFull }} - {{ data['toDate'] | dateFull}}
             </dd>
             <dd class="nhsuk-summary-list__actions">
               <a href="dates?change=dates">
@@ -65,7 +64,7 @@
 
 
         {{ button({
-          href: "task-list",
+          href: "task-list?progress=true",
           text: "Save and continue"
         }) }}
     </div>
